@@ -1,23 +1,29 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var objects;
 (function (objects) {
-    var Button = (function (_super) {
+    var Button = /** @class */ (function (_super) {
         __extends(Button, _super);
         //CONSTRUCTOR
         function Button(pathString, x, y) {
-            _super.call(this, assets.getResult(pathString));
-            this.x = x;
-            this.y = y;
-            this.width = 150;
-            this.height = 50;
-            this.regX = this.width * 0.5;
-            this.regY = this.height * 0.5;
-            this.on("mouseover", this.overButton, this);
-            this.on("mouseout", this.outButton, this);
+            var _this = _super.call(this, assets.getResult(pathString)) || this;
+            _this.x = x;
+            _this.y = y;
+            _this.width = 150;
+            _this.height = 50;
+            _this.regX = _this.width * 0.5;
+            _this.regY = _this.height * 0.5;
+            _this.on("mouseover", _this.overButton, _this);
+            _this.on("mouseout", _this.outButton, _this);
+            return _this;
         }
         // PRIVATE METHODS
         // Event Handler for mouse over
